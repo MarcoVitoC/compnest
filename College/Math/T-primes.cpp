@@ -28,7 +28,7 @@ int main() {
       cin >> x;
 
       double sq = sqrt(x);
-      if (sq - (int)sq == 0) {
+      if (sq - (int)sq == 0) { // check if x is a perfect square number (e.g. 4, 9, 16, 25, 36, 49, etc)
          if (isPrimeNumber[(int)sq]) {
             cout << "YES" << endl;
          } else {
