@@ -16,7 +16,7 @@ int main() {
             while (res % 10 == 0) {
                res /= 10;
             }
-            res %= 10000000000; // prevent res value from becoming too large
+            res %= 10000000000;
          }
          cout << res % 10 << endl;
       }
