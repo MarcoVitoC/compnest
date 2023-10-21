@@ -28,7 +28,6 @@ int main() {
       string s;
       getline(cin, s);
       
-      cout << (isValidParentheses(s) ? "Yes" : "No") << endl;
       if (isValidParentheses(s)) {
          cout << "Yes\n";
       } else {
