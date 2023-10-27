@@ -10,7 +10,7 @@ int main() {
          if (s[i] == '[') {
             int j = i + 1;
             string temp = "";
-            while (s[j] != '[' && s[j] != ']') {
+            while (s[j] != '[' && s[j] != ']' && s[j] != '\0') {
                temp += s[j];
                j++;
             }
