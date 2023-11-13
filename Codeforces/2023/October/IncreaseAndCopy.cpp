@@ -2,22 +2,18 @@
 #define ll long long
 using namespace std;
 
-void solve() {
-   ll n, ans = 0, a = 1;;
-   cin >> n;
-
-   if (n == 1) {
-      cout << 0 << endl;
-      return;
+ll findA(ll left, ll right, ll n, ll a) {
+   while (left <= right) {
+      ll mid = left + (right - left) / 2;
+      if (mid * mid <= n) {
+         a = max(a, mid);
+         left = mid + 1;
+      } else {
+         right = mid - 1;
+      }
    }
 
-   while (a * a <= n) a++;
-   --a;
-
-   int div = (n % a == 0) ? n / a : (n / a) + 1;
-   ans = (a - 1) + ((div) - 1);
-   
-   cout << ans << endl;
+   return a;
 }
 
 int main() {
@@ -28,7 +24,13 @@ int main() {
    cin >> t;
 
    while (t--) {
-      solve();
+      ll n;
+      cin >> n;
+
+      ll a = findA(1, n, n, 0);
+      ll div = (n % a == 0) ? n / a : (n / a) + 1;
+      
+      cout << (a - 1) + ((div) - 1) << endl;
    }
 
    return 0;
